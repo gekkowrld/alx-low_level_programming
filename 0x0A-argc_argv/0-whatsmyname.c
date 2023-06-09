@@ -4,7 +4,7 @@
  * main - A function to display its name
  * @argc: The argument count
  * @argv: The argument variable
- * Return: The name of the program
+ * Return: EXIT_SUCESS
 */
 
 int main(__attribute__((unused))int argc, char **argv)
