@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 for c_file in *.c; do
 	gcc -std=gnu89 -Wall -Werror -c $c_file
