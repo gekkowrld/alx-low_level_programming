@@ -43,7 +43,7 @@
 *.i*86
 *.x86_64
 *.hex
-[[:digit:]]-main.c
+[[:digit:]]*-main.c
 
 
 # Debug files
