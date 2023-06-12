@@ -1,3 +1,11 @@
+# ignore evrything
+*
+
+# Unignore files with extensions and folders
+
+!*/
+!*.*
+
 # Prerequisites
 *.d
 
@@ -35,8 +43,8 @@
 *.i*86
 *.x86_64
 *.hex
-*.[![:alpha:]]
-[[:num:]]-main.c
+[[:digit:]]-main.c
+
 
 # Debug files
 *.dSYM/
