@@ -7,6 +7,18 @@
  * Return: The pointer to the memory
 */
 
+/**
+ * For now the standard strdup has a bug.
+ * On a debian, strdup doesn't behave as expected,
+ * I'll be modifying the custom one but for more info check the bug
+ * https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=222891
+ *
+ * Apparently handling string NULL which is one of the tests in ALX
+ * isn't habdled well on Debian
+ *
+ * This seems to be a Debian problem so other distro's should work well
+*/
+
 char *_strdup(char *str)
 {
 	int len = strlen(str);
@@ -16,7 +28,7 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
-	arr = malloc(sizeof(str) * len);
+	arr = malloc(sizeof(char) * len);
 
 	if (arr == NULL)
 		return (NULL);
