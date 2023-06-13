@@ -5,16 +5,15 @@
  * memory if sucessfull
  * @str: The string that memmory will be allocated to
  * Return: The pointer to the memory
-*/
-
-/**
+ *
+ * == Unrelated ==
  * For now the standard strdup has a bug.
  * On a debian, strdup doesn't behave as expected,
  * I'll be modifying the custom one but for more info check the bug
  * https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=222891
  *
  * Apparently handling string NULL which is one of the tests in ALX
- * isn't habdled well on Debian
+ * isn't handled well on Debian
  *
  * This seems to be a Debian problem so other distro's should work well
 */
