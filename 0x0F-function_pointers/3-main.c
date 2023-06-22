@@ -22,7 +22,8 @@ int main(int argc, char *argv[])
 		}
 		printf("%d\n", op_arg(atoi(argv[1]), atoi(argv[3])));
 	}
-	else {
+	else
+	{
 		printf("Error\n");
 		exit(98);
 	}
