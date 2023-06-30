@@ -8,10 +8,10 @@ section .data
 
 section .text
 		main:
-		mov rsi, msg
-		mov rdi, fmt
-		mov rax, 0
-
+		mov esi, msg
+		mov edi, fmt
+		mov eax, 0
 		call printf
 
+		mov eax, 0
 		ret
