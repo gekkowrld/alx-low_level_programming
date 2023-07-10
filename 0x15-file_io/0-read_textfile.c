@@ -19,7 +19,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	fd = fopen(filename, "r");
 
-	if (!fd)
+	if (fd == -1)
 		return (0);
 
 	i = read(fileno(fd), ch, letters);
@@ -27,7 +27,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (i == -1)
 		return (0);
 
-	if (!write(STDOUT_FILENO, ch, i))
+	if (write(STDOUT_FILENO, ch, i) == -1)
 		return (0);
 
 	free(ch);
