@@ -6,6 +6,9 @@ int myPow(int x, int n);
  * binary_to_uint - Convert a binary to decimal
  * @b: The "number" to be calculated
  * Return: The decimal number
+ *
+ * This is not the recommend way, bit manipulation
+ * definitely is the right method
 */
 
 unsigned int binary_to_uint(const char *b)
