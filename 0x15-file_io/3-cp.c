@@ -10,7 +10,11 @@
 int main(int argc, char *argv[])
 {
 	int f_from, f_to;
+	size_t b_read;
 	char *ch = malloc(sizeof(char) * BUFFER);
+
+	if (!ch)
+		return (-1);
 
 	if (argc != 3)
 	{
@@ -31,22 +35,26 @@ int main(int argc, char *argv[])
 
 	f_from = open(argv[1], O_RDONLY);
 
-	if (f_from == -1)
+	while ((b_read = read(f_from, ch, BUFFER)) > 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
+		if (f_from == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
 
-	read(f_from, ch, BUFFER);
+		read(f_from, ch, BUFFER);
 
-	if (write(f_to, ch, BUFFER) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
+		if (write(f_to, ch, BUFFER) == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
 	}
 
 	close(f_from);
 	close(f_to);
+	free(ch);
 
 	return (0);
 }
