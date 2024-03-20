@@ -8,7 +8,7 @@ all: ${OBJ}
 	${CC} ${OBJ} -o ${NAME}
 
 clean:
-	${RM} -r *.swp *~ ${NAME}
+	${RM} -r  *~ ${NAME}
 
 oclean:
 	${RM} -r ${OBJ}
