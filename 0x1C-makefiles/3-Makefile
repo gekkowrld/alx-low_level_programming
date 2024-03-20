@@ -13,6 +13,6 @@ clean:
 oclean:
 	${RM} -r ${OBJ}
 
-fclean: clean oclean
+fclean: oclean clean
 
-re: fclean all
+re: oclean all
