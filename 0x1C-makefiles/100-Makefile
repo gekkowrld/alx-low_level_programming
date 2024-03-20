@@ -8,15 +8,15 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 .PHONY: all clean re oclean fclean
 
 all: m.h ${OBJ}
-	${CC} ${OBJ} ${CFLAGS} -o ${NAME}
+	${CC} ${OBJ} -o ${NAME}
 
 re: oclean all
 
 clean:
-	${RM} -r  *~ ${NAME}
+	${RM}  *~ ${NAME}
 
 oclean:
-	${RM} -r ${OBJ}
+	${RM} ${OBJ}
 
 fclean: clean oclean
 
